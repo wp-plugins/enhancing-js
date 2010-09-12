@@ -176,7 +176,7 @@ class EnhancingJS{
         wp_default_scripts($wp_scripts);
 
         echo "<h3 style=\"margin-top:2em;\">Enqueue Scripts</h3>";
-        echo "<p>".__("Please check, if you want to load automatically.", $this->name)."</p>";
+        echo "<p>".__("Please check, if you want to load automatically on theme.", $this->name)."</p>";
         echo "<table class=\"widefat\" cellspacing=\"0\">";
         echo "<thead>";
         echo "<tr>";
