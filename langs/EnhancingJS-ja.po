@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-12 19:57+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../EnhancingJS.php:110
+msgid "Enhancing JS"
+msgstr "拡張JavaScript"
+
+#: ../EnhancingJS.php:143
+msgid "Saved."
+msgstr "保存しました。"
+
+#: ../EnhancingJS.php:155 ../EnhancingJS.php:168
+msgid "Save Changes"
+msgstr ""
+
+#: ../EnhancingJS.php:160
+msgid "Undo"
+msgstr "取り消す"
+
+#: ../EnhancingJS.php:161
+msgid "Redo"
+msgstr "やり直す"
+
+#: ../EnhancingJS.php:162
+msgid "Search"
+msgstr "検索"
+
+#: ../EnhancingJS.php:163
+msgid "Replace"
+msgstr "置換"
+
+#: ../EnhancingJS.php:179
+msgid "Please check, if you want to load automatically on theme."
+msgstr "テーマ上で自動的にロードしたい場合は、チェックしてください。"
+
+#: ../EnhancingJS.php:184
+msgid "Handle"
+msgstr "識別子"
+
+#: ../EnhancingJS.php:185
+msgid "Version"
+msgstr "バージョン"
+
+#: ../EnhancingJS.php:186
+msgid "Deps"
+msgstr "依存関係"
+
+#~ msgid "Save"
+#~ msgstr "保存"
