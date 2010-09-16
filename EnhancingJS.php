@@ -4,7 +4,7 @@ Plugin Name: Enhancing JavaScript
 Plugin URI: http://firegoby.theta.ne.jp/wp/enhancingjs
 Description: Add & Edit custom JavaScript throught WordPress Dashboard with visual editor.
 Author: Takayuki Miyauchi (THETA NETWORKS Co,.Ltd)
-Version: 0.1
+Version: 0.2
 Author URI: http://firegoby.theta.ne.jp/
 */
 
@@ -56,6 +56,26 @@ class EnhancingJS{
         add_action('wp_print_scripts', array(&$this, 'wp_print_scripts'));
     }
 
+    private function conditional_get($time = 0)
+    {
+        $last_modified = gmdate('D, d M Y H:i:s T', $time);
+        $etag = md5($last_modified);
+        header('Last-Modified: '.$last_modified);
+        header('ETag: "'.$etag.'"');
+        if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
+            if ($_SERVER['HTTP_IF_MODIFIED_SINCE'] == $last_modified) {
+                header('HTTP/1.1 304 Not Modified');
+                exit;
+            }
+        }
+        if (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
+            if (preg_match("/{$etag}/", $_SERVER['HTTP_IF_NONE_MATCH'])) {
+                header('HTTP/1.1 304 Not Modified');
+                exit;
+            }
+        }
+    }
+
     public function wp_print_scripts()
     {
         if (!is_admin()) {
@@ -87,6 +107,7 @@ class EnhancingJS{
     public function get_js()
     {
         header('Content-type: text/javascript');
+        $this->conditional_get(get_option('EnhancingJS.last_modified', 0));
         echo $this->get_js_src();
         exit;
     }
@@ -94,6 +115,7 @@ class EnhancingJS{
     private function get_js_src()
     {
         if($js = trim(get_option('EnhancingJS'))){
+            $js = str_replace(array("\r\n", "\r"), "\n", $js);
             $css = stripslashes($js);
         } else {
             $css = "/* {$this->title} */\n";
@@ -140,6 +162,7 @@ class EnhancingJS{
         if ( isset($_POST['action']) && $_POST['action'] == 'save' ){
             $this->save_enqueue();
             update_option('EnhancingJS', $_POST['EnhancingJS']);
+            update_option('EnhancingJS.last_modified', time());
             echo "<div id=\"message\" class=\"updated fade\"><p><strong>".__("Saved.")."</strong></p></div>";
         }
 

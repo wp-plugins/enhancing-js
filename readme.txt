@@ -4,7 +4,7 @@ Donate link: http://firegoby.theta.ne.jp/
 Tags: CSS, JavaScript, Visual Editor
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.1
+Stable tag: 0.2
 
 Enhancing JS plugin will enable to edit external JavaScript.
 In addition, this plugin implements simple visual editor for JavaScript.
@@ -25,6 +25,7 @@ You can customize themes without PHP programming!
 
 * You can edit External JavaScript on visual editor.
 * You can manage WordPress Default JavaScript frameworks.
+* Conditional GET and ETag support.
 
 = Translators: =
 
@@ -60,6 +61,11 @@ edit_theme_options
 2. Manage enqueue scripts.
 
 == Changelog ==
+
+= 0.2 =
+
+* Added Conditional GET and ETag support.
+* Delete carriage return from JavaScript source.
 
 = 0.1 =
 
