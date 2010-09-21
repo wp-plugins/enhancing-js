@@ -4,7 +4,7 @@ Plugin Name: Enhancing JavaScript
 Plugin URI: http://firegoby.theta.ne.jp/wp/enhancingjs
 Description: Add & Edit custom JavaScript throught WordPress Dashboard with visual editor.
 Author: Takayuki Miyauchi (THETA NETWORKS Co,.Ltd)
-Version: 0.2
+Version: 0.3
 Author URI: http://firegoby.theta.ne.jp/
 */
 
@@ -90,9 +90,9 @@ class EnhancingJS{
     {
         global $wp_rewrite;
         if ($wp_rewrite->using_permalinks()) {
-            $url = site_url().'/'.$this->name.'.js';
+            $url = get_bloginfo('url').'/'.$this->name.'.js';
         } else {
-            $url = site_url().'/?'.$this->name.'=true';
+            $url = get_bloginfo('url').'/?'.$this->name.'=true';
         }
         return $url;
     }
