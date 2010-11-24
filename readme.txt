@@ -4,7 +4,7 @@ Donate link: http://firegoby.theta.ne.jp/
 Tags: CSS, JavaScript, Visual Editor
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.3
+Stable tag: 0.4
 
 Enhancing JS plugin will enable to edit external JavaScript.
 In addition, this plugin implements simple visual editor for JavaScript.
